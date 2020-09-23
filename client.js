@@ -15,13 +15,19 @@ const connect = function () {
   conn.on('data', (data) => {
     console.log(data);
   });
-
+  // sends message upon successfully connecting to the game server
   conn.on('connect', () => {
     console.log('Successfully connected to game server');
   });
+  // writes name of snake on game board
   conn.on('connect', () => {
     conn.write('Name: JJG');
+    
   });
+  //
+  // conn.on('connect', () => {
+  //   conn.write('Move: up');
+  // });
 
   return conn;
 }
